@@ -110,10 +110,11 @@ def main():
     print("\n Application name:",sys.argv[0])
     print("+++++++++- Process Monitor -+++++++++")
 
-    if(len(sys.argv)==1):
-        print("Error :invalid number of arguments")
-        exit()
-    if(len(sys.argv)!=2):
+    
+    if(len(sys.argv)<=2):
+        if(len(sys.argv)==1):
+            print("Error :invalid number of arguments")
+            exit()
         if(sys.argv[1]=='-h') or(sys.argv[1]=='-H'):
             print("This script which accept directory name and mail id from user and create log\
 file in that directory which contains information of running processes as its name, PID,\
@@ -121,6 +122,9 @@ Username. After creating log file send that log file to the specified mail.")
             exit()
         if(sys.argv[1]=='-u') or (sys.argv[1]=='-U'):
             print("Usage : ProcInfoLog.py Demo Marvellousinfosystem@gmail.com")
+            exit()
+        else:
+            print("Error :invalid number of arguments")
             exit()
     try:
     
