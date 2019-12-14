@@ -129,6 +129,7 @@ Username. After creating log file send that log file to the specified mail.")
     try:
     
         if mailcheck.check(sys.argv[2]):
+            
             connected=Conn.is_connected()
             if connected:
                 start=time.time()
